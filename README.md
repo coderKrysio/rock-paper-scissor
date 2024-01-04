@@ -7,7 +7,7 @@ This is a simple rock paper scissor game built using:
 
 
 ## Preview
-
+![Game Preview](https://github.com/coderKrysio/rock-paper-scissor/assets/91840205/04f2d0dd-3a90-4eca-92aa-e062114435f1)
 
 
 ## Cloning the project
