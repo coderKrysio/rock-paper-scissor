@@ -1,37 +1,26 @@
 "use client";
-import { Orbitron, Oxanium } from "next/font/google";
-import { useContext, useState } from "react";
-import { AppContext } from "./game-board";
-const orbitron = Orbitron({
-    weight: ["400", "500", "600"],
-    subsets: ["latin"],
-});
-const oxanium = Oxanium({ weight: ["400", "500", "600"], subsets: ["latin"] });
+import { useContext } from "react";
+import { oxanium } from "@/lib/font";
+import { GameContext } from "@/lib/game-context";
 export const Player = () => {
-    const [playerChoice, setPlayerChoice] = useState("rock");
-    const { setUserSubmitted } = useContext(AppContext);
+    const { setUserSubmitted, setPlayerChoice, matchStatus } =
+        useContext(GameContext);
     return (
         <div
             className={`flex flex-col items-center justify-center gap-4 ${oxanium.className}`}
         >
-            <div className="flex flex-col items-center justify-center gap-2">
-                <p className="text-lg font-medium">Player Points</p>
-                <p
-                    className={`text-6xl font-semibold text-[#f96363] ${orbitron.className}`}
-                >
-                    3
-                </p>
+            <div className="flex flex-col items-center justify-center gap-2 text-2xl font-semibold">
+                Player
             </div>
 
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     setUserSubmitted(true);
-                    console.log(playerChoice);
                 }}
                 className="flex flex-col items-center justify-center gap-4"
             >
-                <div className="flex items-center justify-center gap-5">
+                <div className="flex items-center justify-center gap-5 max-[400px]:gap-4">
                     <label>
                         <input
                             type="radio"
@@ -76,9 +65,11 @@ export const Player = () => {
                     </label>
                 </div>
 
-                <button className="w-full py-2 border-2 border-[#00ff9f] text-[#00ff9f] text-xl font-semibold rounded-xl hover:bg-[#00ff9f] hover:text-black transition-colors">
-                    Ready Go!
-                </button>
+                {matchStatus === "" && (
+                    <button className="w-full py-2 border-2 border-[#00ff9f] text-[#00ff9f] text-xl font-semibold rounded-xl hover:bg-[#00ff9f] hover:text-black transition-colors">
+                        Ready Go!
+                    </button>
+                )}
             </form>
         </div>
     );
