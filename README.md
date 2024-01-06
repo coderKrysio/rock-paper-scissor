@@ -12,15 +12,29 @@ This is a simple rock paper scissor game built using:
 
 ## Cloning the project
 
-First, run the command in your local cmd:
-
+- First clone the project using the below git command:
 ```bash
 git clone https://github.com/coderKrysio/rock-paper-scissor.git
 ```
-Open the folder in your local IDE and run the following in the terminal:
 
+- cd in your project root directory:
+```bash
+cd rock-paper-scissor
+```
+
+- Then open the code on your local code editor
+```bash
+code .
+# or
+code-insiders .
+```
+- Now install the dependencies in the editor terminal
 ```bash
 npm install
+```
+
+- Lastly run the dev version of the project to view it on your browser
+```bash
 npm run dev
 ```
 

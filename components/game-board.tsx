@@ -54,10 +54,10 @@ export const GameBoard = () => {
                         {matchStatus}
                     </div>
                     <button
-                        className="underline underline-offset-4 text-lg text-[#f58b57] text-center w-full mt-5"
+                        className="w-full py-2 border-2 border-[#f58b57] text-[#f58b57] text-xl text-center font-semibold rounded-xl hover:bg-[#f58b57] hover:text-black transition-colors mt-5"
                         onClick={handleRefresh}
                     >
-                        Restart
+                        Play Again
                     </button>
                 </div>
             )}
